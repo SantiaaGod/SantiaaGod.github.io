@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santiago Montes de Oca — Minecraft Bedrock Developer</title>
+<meta name="description" content="Minecraft Bedrock add-on developer and former CTO at Sapphire Studios. 13 Minecraft Marketplace titles shipped: Script API systems, custom entities, items, blocks and world generation. Available for contract work.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Santiago Montes de Oca — Minecraft Bedrock Developer">
+<meta property="og:description" content="Former CTO at Sapphire Studios · 13 Marketplace titles · Script API, custom entities, world generation. Available for contract work.">
+<meta property="og:url" content="https://santiaagod.github.io/">
+<meta property="og:image" content="https://santiaagod.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0d12">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0d12;
+  --surface: #12151c;
+  --surface-2: #181c25;
+  --border: #242a37;
+  --text: #e9ecf2;
+  --muted: #9aa3b4;
+  --faint: #6b7385;
+  --accent: #3ddc84;
+  --accent-ink: #06210f;
+  --accent-soft: rgba(61, 220, 132, .12);
+  --diamond: #5ee7ff;
+  --radius: 14px;
+  --maxw: 1160px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Space Grotesk", var(--font);
+  --pixel: "Silkscreen", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 var(--font); -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.pixel { font-family: var(--pixel); letter-spacing: .02em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* nav */
+.nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); background: rgba(11, 13, 18, .78); border-bottom: 1px solid var(--border); }
+.nav .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 18px; }
+.brand-mark { width: 22px; height: 22px; }
+.nav-links { display: flex; gap: 22px; margin-left: auto; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; }
+.nav-links a:hover { color: var(--text); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: #57e897; }
+.btn-ghost { border-color: var(--border); color: var(--text); background: var(--surface); }
+.btn-ghost:hover { border-color: #3a4254; }
+.nav .btn { padding: 8px 14px; font-size: 14px; }
+
+/* hero */
+.hero { padding: 72px 0 56px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: -40% -10% auto auto; width: 720px; height: 720px; background: radial-gradient(closest-side, rgba(61, 220, 132, .16), transparent 70%); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.status { display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 13px; }
+.status .dot { width: 8px; height: 8px; border-radius: 2px; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+h1 { font-family: var(--display); font-size: clamp(38px, 5.2vw, 60px); line-height: 1.05; letter-spacing: -.02em; margin: 20px 0 18px; }
+h1 .hl { color: var(--accent); }
+.lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+.lead strong { color: var(--text); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 40px; max-width: 620px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.stat b { display: block; font-family: var(--display); font-size: 26px; line-height: 1.1; }
+.stat span { font-size: 12.5px; color: var(--muted); }
+.mosaic { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; transform: rotate(-3deg); }
+.mosaic img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 18px 40px rgba(0, 0, 0, .45); }
+.mosaic img:nth-child(even) { transform: translateY(26px); }
+
+/* sections */
+section { padding: 72px 0; }
+.eyebrow { color: var(--accent); font-size: 12px; text-transform: uppercase; }
+h2 { font-family: var(--display); font-size: clamp(28px, 3.4vw, 38px); letter-spacing: -.015em; line-height: 1.15; margin: 8px 0 10px; }
+.sub { color: var(--muted); margin: 0 0 28px; max-width: 640px; }
+.section-alt { background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .015) 12%, rgba(255, 255, 255, .015) 88%, transparent); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* work */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filter { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font: 500 14px var(--font); cursor: pointer; }
+.filter[aria-pressed="true"] { background: var(--accent-soft); border-color: rgba(61, 220, 132, .45); color: var(--text); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-align: left; color: inherit; font: inherit; padding: 0; cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-3px); border-color: #34405a; box-shadow: 0 16px 36px rgba(0, 0, 0, .35); }
+.card[hidden] { display: none; }
+.card .thumb { display: block; position: relative; aspect-ratio: 16 / 9; background: var(--surface-2); }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.badge { position: absolute; top: 10px; left: 10px; padding: 3px 8px; border-radius: 6px; background: rgba(11, 13, 18, .82); border: 1px solid rgba(255, 255, 255, .12); font-size: 10px; color: var(--text); }
+.card .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card .title { font-family: var(--display); font-size: 19px; font-weight: 700; line-height: 1.25; }
+.card .studio { font-size: 13px; color: var(--muted); margin-top: -4px; }
+.card .desc { font-size: 14.5px; color: #c3c9d5; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+.chip { font-size: 12px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; }
+
+/* experience */
+.timeline { display: grid; gap: 16px; }
+.job { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.job .when { color: var(--accent); font-size: 13px; padding-top: 4px; }
+.job h3 { margin: 0 0 2px; font-family: var(--display); font-size: 20px; }
+.job .org { color: var(--muted); font-size: 14.5px; margin-bottom: 8px; }
+.job p { margin: 0; color: #c3c9d5; font-size: 15px; }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.svc { padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.svc .ico { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 8px; background: var(--accent-soft); color: var(--accent); margin-bottom: 14px; }
+.svc h3 { margin: 0 0 6px; font-family: var(--display); font-size: 18px; }
+.svc p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.toolbox { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.toolbox .chip { font-size: 13px; padding: 5px 10px; color: #c3c9d5; }
+
+/* hire */
+.hire { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.panel { padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.panel h3 { margin: 0 0 16px; font-family: var(--display); font-size: 20px; }
+.facts { display: grid; gap: 12px; margin: 0; }
+.facts div { display: grid; grid-template-columns: 130px 1fr; gap: 12px; font-size: 15px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+.contact-list { display: grid; gap: 10px; margin: 0 0 22px; padding: 0; list-style: none; }
+.contact-list a, .contact-list span.val { color: var(--text); font-weight: 600; text-decoration: none; word-break: break-all; }
+.contact-list a:hover { color: var(--accent); }
+.contact-list .k { display: block; font-size: 12px; color: var(--muted); }
+.copy { margin-left: 8px; font: 500 12px var(--font); color: var(--muted); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+
+footer { padding: 36px 0 48px; color: var(--faint); font-size: 13px; border-top: 1px solid var(--border); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* modal */
+dialog { width: min(980px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); color: var(--text); overflow: auto; }
+dialog::backdrop { background: rgba(4, 6, 10, .78); backdrop-filter: blur(4px); }
+.m-media { background: #000; }
+.m-main { width: 100%; height: auto; max-height: 58vh; aspect-ratio: 16 / 9; object-fit: cover; }
+.m-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 8px; background: var(--surface-2); }
+.m-strip button { padding: 0; border: 2px solid transparent; border-radius: 8px; overflow: hidden; cursor: pointer; background: none; }
+.m-strip button[aria-current="true"] { border-color: var(--accent); }
+.m-strip img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.m-body { padding: 22px 26px 26px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 26px; }
+.m-body h3 { margin: 0 0 4px; font-family: var(--display); font-size: 26px; }
+.m-meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+.m-role { font-size: 14px; background: var(--accent-soft); border: 1px solid rgba(61, 220, 132, .3); border-radius: 8px; padding: 8px 12px; margin-bottom: 14px; }
+.m-body ul { margin: 0; padding-left: 18px; color: #c3c9d5; font-size: 14.5px; }
+.m-links { display: flex; flex-direction: column; gap: 10px; }
+.m-close { position: sticky; top: 10px; float: right; margin: 10px 10px -46px 0; z-index: 2; width: 36px; height: 36px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .2); background: rgba(11, 13, 18, .8); color: var(--text); font-size: 20px; cursor: pointer; }
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .mosaic { max-width: 560px; transform: rotate(-2deg); }
+  .grid, .services { grid-template-columns: repeat(2, 1fr); }
+  .hire { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .nav-links { display: none; }
+  .nav .btn { margin-left: auto; }
+  .hero { padding: 44px 0 36px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid, .services { grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; gap: 6px; }
+  .facts div { grid-template-columns: 1fr; gap: 2px; }
+  .m-body { grid-template-columns: 1fr; padding: 18px; }
+  section { padding: 52px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .card { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Santiago Montes de Oca, home">
+      <svg class="brand-mark" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#1fa35c"/><rect x="1" y="1" width="6" height="1" fill="#3ddc84"/><rect x="0" y="2" width="8" height="4" fill="#3ddc84"/><rect x="1" y="2" width="2" height="2" fill="#b6f7d2"/><rect x="1" y="6" width="6" height="1" fill="#1fa35c"/><rect x="2" y="7" width="4" height="1" fill="#137a42"/><rect x="5" y="4" width="2" height="2" fill="#1fa35c"/></svg>
+      Santia
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-primary" href="#contact">Hire me</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status"><span class="dot"></span>Available for contract work · part-time</span>
+        <h1>Minecraft Bedrock developer.<br><span class="hl">13 Marketplace titles</span> shipped.</h1>
+        <p class="lead">I'm <strong>Santiago Montes de Oca</strong> (Santia), former <strong>CTO at Sapphire Studios</strong>. For seven years I've built add-ons and worlds for the Minecraft Marketplace, covering Script API systems, custom entities and mob AI, items, blocks and world generation, for Sapphire Studios, A Foxy Toast and the Enchanted server.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:santimontesdeoca@gmail.com?subject=Bedrock%20project">Email me</a>
+          <a class="btn btn-ghost" href="#work">See my work</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>13</b><span>Marketplace titles</span></div>
+          <div class="stat"><b>1,300+</b><span>player ratings</span></div>
+          <div class="stat"><b>7 yrs</b><span>on Bedrock</span></div>
+          <div class="stat"><b>ex-CTO</b><span>Sapphire Studios</span></div>
+        </div>
+      </div>
+      <div class="mosaic" aria-hidden="true">
+        <img src="assets/img/soul-hunters/keyart.webp" alt="" width="800" height="450">
+        <img src="assets/img/portality/keyart.webp" alt="" width="800" height="450">
+        <img src="assets/img/pet-blocks/keyart.webp" alt="" width="800" height="450">
+        <img src="assets/img/cartoon-planes/keyart.webp" alt="" width="800" height="450">
+        <img src="assets/img/wither-plus/keyart.webp" alt="" width="800" height="450">
+        <img src="assets/img/one-chunk-survival/keyart.webp" alt="" width="800" height="450">
+      </div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="eyebrow pixel">Selected work</div>
+      <h2>Released on the Minecraft Marketplace</h2>
+      <p class="sub">Add-ons and worlds I developed with Sapphire Studios and A Foxy Toast. Open a project for screenshots, features and links.</p>
+      <div class="filters" role="group" aria-label="Filter projects by studio">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All (13)</button>
+        <button class="filter" type="button" data-filter="Sapphire Studios" aria-pressed="false">Sapphire Studios (7)</button>
+        <button class="filter" type="button" data-filter="A Foxy Toast" aria-pressed="false">A Foxy Toast (6)</button>
+      </div>
+      <div class="grid">
+        <button class="card" type="button" data-slug="portality" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/portality/keyart.webp" alt="Portality key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Portality</span>
+            <span class="studio">Sapphire Studios · Add-On · Jul 2024</span>
+            <span class="desc">Official Bedrock port of the Java mod Portality, built together with the original mod&#x27;s creator, Buuz135. Adds warp portals to survival.</span>
+            <span class="chips"><span class="chip">Port of a popular Java mod to Bedrock</span><span class="chip">Warp portal network for survival</span><span class="chip">Made with the original author (Buuz135)</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="soul-hunters" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/soul-hunters/keyart.webp" alt="Soul Hunters Add-On key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Soul Hunters Add-On</span>
+            <span class="studio">A Foxy Toast · Add-On · Jan 2026</span>
+            <span class="desc">Combat Add-On about surviving endless demon nights: upgradeable soul weapons, summonable boss lords, armor sets and companions.</span>
+            <span class="chips"><span class="chip">10 upgradeable Soul Weapons</span><span class="chip">9 summonable Demonic Lord bosses</span><span class="chip">15+ full-moon enemies and portal armies</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="pet-blocks" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/pet-blocks/keyart.webp" alt="Pet Blocks key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Pet Blocks</span>
+            <span class="studio">A Foxy Toast · Add-On · Jan 2025</span>
+            <span class="desc">200+ tameable block pets that dance, mine, fight and cook, with custom interactions and a personal pet squad.</span>
+            <span class="chips"><span class="chip">200+ pets</span><span class="chip">Pets that dance, mine, fight and cook</span><span class="chip">Custom interactions and animations</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="one-chunk-survival" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/one-chunk-survival/keyart.webp" alt="One Chunk Survival key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">One Chunk Survival</span>
+            <span class="studio">Sapphire Studios · World · Nov 2023</span>
+            <span class="desc">Survival challenge confined to a single chunk, with luck-based resource generators that grow as you progress.</span>
+            <span class="chips"><span class="chip">Survival limited to one chunk</span><span class="chip">Randomized resource generators</span><span class="chip">Built-in tutorial</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="wither-plus" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/wither-plus/keyart.webp" alt="Wither Plus Add-On key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Wither Plus Add-On</span>
+            <span class="studio">A Foxy Toast · Add-On · Jul 2025</span>
+            <span class="desc">Wither-themed expansion with new Wither bosses, skeleton mobs, collectible beacons, craftable decor and pets.</span>
+            <span class="chips"><span class="chip">New Wither bosses</span><span class="chip">Unique skeleton mobs</span><span class="chip">Collectible beacons</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="weapons" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/weapons/keyart.webp" alt="Weapons key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Weapons</span>
+            <span class="studio">Sapphire Studios · Add-On · Jan 2025</span>
+            <span class="desc">27 craftable overpowered swords, each with its own recipe, attack animations and special ability, for solo play or PvP.</span>
+            <span class="chips"><span class="chip">27 custom swords</span><span class="chip">Unique crafting recipe per weapon</span><span class="chip">Custom attack animations</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="pizza-rush" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/pizza-rush/keyart.webp" alt="Pizza Rush: Craftable Pizza Add-On key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Pizza Rush: Craftable Pizza Add-On</span>
+            <span class="studio">A Foxy Toast · Add-On · Oct 2025</span>
+            <span class="desc">Cooking Add-On: build pizzas from dough, sauce, cheese and toppings on interactive machines; timed cooking and stacking buffs.</span>
+            <span class="chips"><span class="chip">5+ interactive cooking machines</span><span class="chip">30+ pizza combinations</span><span class="chip">Stacking buffs</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="cartoon-planes" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/cartoon-planes/keyart.webp" alt="Cartoon Planes key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Cartoon Planes</span>
+            <span class="studio">Sapphire Studios · World · May 2021</span>
+            <span class="desc">Cartoon flying world: earn a pilot&#x27;s license, run tasks and heist events, and upgrade your plane.</span>
+            <span class="chips"><span class="chip">8 flyable planes</span><span class="chip">License progression and tasks</span><span class="chip">Heist events with upgrade rewards</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="dungeons-expansion" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/dungeons-expansion/keyart.webp" alt="Dungeons Expansion key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Dungeons Expansion</span>
+            <span class="studio">Sapphire Studios · World · Sep 2022</span>
+            <span class="desc">Survival expansion where pixies spawn 24 dungeons into the world, packed with new mobs, challenges and loot.</span>
+            <span class="chips"><span class="chip">24 spawnable dungeons</span><span class="chip">Pixie-triggered dungeon spawning</span><span class="chip">New mobs and loot</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="one-block-space-smp" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/one-block-space-smp/keyart.webp" alt="One Block Space SMP key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">One Block Space SMP</span>
+            <span class="studio">A Foxy Toast · World · Aug 2026</span>
+            <span class="desc">Space-themed one-block survival: a single block generates resources while asteroids, alien mobs and events appear in the void.</span>
+            <span class="chips"><span class="chip">Resource-generating space block</span><span class="chip">Asteroids, alien mobs and void events</span><span class="chip">Unlockable One Block phases</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="puppiez" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/puppiez/keyart.webp" alt="Puppiez key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Puppiez</span>
+            <span class="studio">Sapphire Studios · World · Apr 2023</span>
+            <span class="desc">Pet-care world: adopt dogs, then pet, feed, walk and look after them, including beds and cures when they get sick.</span>
+            <span class="chips"><span class="chip">Adoptable dogs</span><span class="chip">Care needs: food, walks, beds</span><span class="chip">Sickness and cures</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="space-gadgets" data-studio="A Foxy Toast" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/space-gadgets/keyart.webp" alt="Space Gadgets key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">Space Gadgets</span>
+            <span class="studio">A Foxy Toast · Add-On · Mar 2025</span>
+            <span class="desc">Four craftable space tools for flying, teleporting and zooming to far-off objectives, made for playing with friends.</span>
+            <span class="chips"><span class="chip">4 craftable gadgets</span><span class="chip">Flight, teleport and dash mechanics</span><span class="chip">Built for multiplayer challenges</span></span>
+          </span>
+        </button>
+        <button class="card" type="button" data-slug="mobs" data-studio="Sapphire Studios" aria-haspopup="dialog">
+          <span class="thumb"><img src="assets/img/mobs/keyart.webp" alt="MOBS key art" width="800" height="450" loading="lazy"></span>
+          <span class="body">
+            <span class="title">MOBS</span>
+            <span class="studio">Sapphire Studios · Add-On · Apr 2025</span>
+            <span class="desc">Custom mobs for any world whose drops summon random boss fights, with custom attacks, effects and armor drops.</span>
+            <span class="chips"><span class="chip">Custom mobs for any world</span><span class="chip">Drops that summon random bosses</span><span class="chip">Custom attacks, effects and armor</span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section-alt">
+    <div class="wrap">
+      <div class="eyebrow pixel">Experience</div>
+      <h2>Where I've worked</h2>
+      <p class="sub">Seven years of Bedrock development, from leading a studio's tech to building server-side systems.</p>
+      <div class="timeline">
+        <article class="job">
+          <div class="when pixel">2019 – 2024</div>
+          <div>
+            <h3>Chief Technology Officer</h3>
+            <div class="org">Sapphire Studios · Minecraft Marketplace partner</div>
+            <p>Led technical development of the studio's Marketplace catalog. Shipped add-ons and worlds including Portality (the official Bedrock port of the Java mod, built with its creator Buuz135), One Chunk Survival, Weapons, Dungeons Expansion, Cartoon Planes, Puppiez and MOBS.</p>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when pixel">2021 – 2026</div>
+          <div>
+            <h3>Server Developer</h3>
+            <div class="org">Enchanted · Minecraft Bedrock server</div>
+            <p>Server-side gameplay systems built with the Script API and run on Bedrock Dedicated Server (BDS).</p>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when pixel">2023 – 2026</div>
+          <div>
+            <h3>Add-On Developer</h3>
+            <div class="org">A Foxy Toast · Minecraft Marketplace partner</div>
+            <p>Scripting plus custom entities, items and blocks for Marketplace add-ons and worlds: Pet Blocks (200+ pets), Soul Hunters, Wither Plus, Pizza Rush, Space Gadgets and One Block Space SMP.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="eyebrow pixel">Services</div>
+      <h2>What I can build for you</h2>
+      <p class="sub">Hand me a design doc or a rough idea. You get clean, organized packs that are ready for the Marketplace.</p>
+      <div class="services">
+        <div class="svc"><div class="ico" aria-hidden="true">&#9635;</div><h3>Complete add-ons</h3><p>End-to-end development: behavior and resource packs, scripting, testing and handoff, built to Marketplace technical requirements.</p></div>
+        <div class="svc"><div class="ico" aria-hidden="true">&#10095;</div><h3>Script API systems</h3><p>Gameplay logic in JavaScript/TypeScript with @minecraft/server and server-ui: progression, menus, abilities and events.</p></div>
+        <div class="svc"><div class="ico" aria-hidden="true">&#9679;</div><h3>Entities &amp; mob AI</h3><p>Custom mobs, bosses, pets and companions: components, behaviors, animation controllers and spawn rules.</p></div>
+        <div class="svc"><div class="ico" aria-hidden="true">&#9650;</div><h3>World generation</h3><p>Features, feature rules and structures that sit naturally in vanilla terrain.</p></div>
+        <div class="svc"><div class="ico" aria-hidden="true">&#9638;</div><h3>Servers &amp; BDS</h3><p>Server-side systems developed and tested on Bedrock Dedicated Server.</p></div>
+        <div class="svc"><div class="ico" aria-hidden="true">&#9733;</div><h3>Technical lead</h3><p>Architecture, reviews, Git workflows and Marketplace requirements, from running a studio's tech as CTO.</p></div>
+      </div>
+      <div class="toolbox" aria-label="Tools">
+        <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">@minecraft/server</span><span class="chip">@minecraft/server-ui</span><span class="chip">Behavior &amp; resource packs (JSON)</span><span class="chip">Regolith</span><span class="chip">Git / GitHub</span><span class="chip">Bedrock Dedicated Server</span><span class="chip">Bedrock Wiki contributor</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-alt">
+    <div class="wrap">
+      <div class="eyebrow pixel">Hire me</div>
+      <h2>Let's build your next add-on</h2>
+      <p class="sub">Send me the brief, the timeline and the budget. I'll reply with a plan and a quote.</p>
+      <div class="hire">
+        <div class="panel">
+          <h3>Rates &amp; availability</h3>
+          <dl class="facts">
+            <div><dt>Rate</dt><dd>USD 25/hour, or a fixed quote per project</dd></div>
+            <div><dt>Engagement</dt><dd>Part-time, contract / freelance</dd></div>
+            <div><dt>Time zone</dt><dd>UTC-3 (Argentina): overlaps with US and European working hours</dd></div>
+            <div><dt>Language</dt><dd>Fluent English · native Spanish</dd></div>
+            <div><dt>Workflow</dt><dd>Git, milestone deliveries, NDAs welcome</dd></div>
+          </dl>
+        </div>
+        <div class="panel">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li><span class="k">Email</span><a href="mailto:santimontesdeoca@gmail.com?subject=Bedrock%20project">santimontesdeoca@gmail.com</a></li>
+
+            <li><span class="k">Bucket of Crabs</span><a href="https://www.bucketofcrabs.net/u/santia_601" target="_blank" rel="noopener">bucketofcrabs.net profile</a></li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:santimontesdeoca@gmail.com?subject=Bedrock%20project">Start a project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Santiago Montes de Oca</span>
+    <span>Product art © Sapphire Studios and A Foxy Toast. Minecraft is a trademark of Mojang Synergies AB. Not affiliated with Mojang or Microsoft.</span>
+  </div>
+</footer>
+
+<dialog id="project" aria-labelledby="m-title">
+  <button class="m-close" type="button" aria-label="Close" data-close>&times;</button>
+  <div class="m-media">
+    <img class="m-main" id="m-main" alt="">
+    <div class="m-strip" id="m-strip"></div>
+  </div>
+  <div class="m-body">
+    <div>
+      <h3 id="m-title"></h3>
+      <div class="m-meta" id="m-meta"></div>
+      <div class="m-role" id="m-role"></div>
+      <p id="m-summary" style="margin:0 0 12px;color:#c3c9d5"></p>
+      <ul id="m-features"></ul>
+    </div>
+    <div class="m-links" id="m-links"></div>
+  </div>
+</dialog>
+
+<script>
+const PRODUCTS = [{"slug": "portality", "title": "Portality", "studio": "Sapphire Studios", "type": "Add-On", "summary": "Official Bedrock port of the Java mod Portality, built together with the original mod's creator, Buuz135. Adds warp portals to survival.", "features": ["Port of a popular Java mod to Bedrock", "Warp portal network for survival", "Made with the original author (Buuz135)"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/portality/28f5342a-391e-4b17-aee9-758fef80c000", "trailer": null, "released": "Jul 2024", "shots": [null, null, null]}, {"slug": "soul-hunters", "title": "Soul Hunters Add-On", "studio": "A Foxy Toast", "type": "Add-On", "summary": "Combat Add-On about surviving endless demon nights: upgradeable soul weapons, summonable boss lords, armor sets and companions.", "features": ["10 upgradeable Soul Weapons", "9 summonable Demonic Lord bosses", "15+ full-moon enemies and portal armies", "10 armor sets and 10 companions"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/soul-hunters-add--on/fbbe2a7d-4220-4709-9c0b-2e75ca68b7a8", "trailer": "https://www.youtube.com/watch?v=ERhYdaAha3M", "released": "Jan 2026", "shots": [null, null, null]}, {"slug": "pet-blocks", "title": "Pet Blocks", "studio": "A Foxy Toast", "type": "Add-On", "summary": "200+ tameable block pets that dance, mine, fight and cook, with custom interactions and a personal pet squad.", "features": ["200+ pets", "Pets that dance, mine, fight and cook", "Custom interactions and animations", "Compatible with all resource packs"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/pet-blocks/297b5435-afef-40f0-a0b2-7ac26eb6a57d", "trailer": "https://www.youtube.com/watch?v=tABf61uFurI", "released": "Jan 2025", "shots": [null, null, null]}, {"slug": "one-chunk-survival", "title": "One Chunk Survival", "studio": "Sapphire Studios", "type": "World", "summary": "Survival challenge confined to a single chunk, with luck-based resource generators that grow as you progress.", "features": ["Survival limited to one chunk", "Randomized resource generators", "Built-in tutorial"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/one-chunk-survival/0d35eba5-60bc-4a73-b0c7-77b2bc3c651b", "trailer": null, "released": "Nov 2023", "shots": [null, null, null]}, {"slug": "wither-plus", "title": "Wither Plus Add-On", "studio": "A Foxy Toast", "type": "Add-On", "summary": "Wither-themed expansion with new Wither bosses, skeleton mobs, collectible beacons, craftable decor and pets.", "features": ["New Wither bosses", "Unique skeleton mobs", "Collectible beacons", "Craftable furniture and pets"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/wither-plus-add--on/e20bba2e-8d8a-4ed5-b606-677b67b18c92", "trailer": "https://www.youtube.com/watch?v=CjEtuEOo8N0", "released": "Jul 2025", "shots": [null, null, null]}, {"slug": "weapons", "title": "Weapons", "studio": "Sapphire Studios", "type": "Add-On", "summary": "27 craftable overpowered swords, each with its own recipe, attack animations and special ability, for solo play or PvP.", "features": ["27 custom swords", "Unique crafting recipe per weapon", "Custom attack animations", "Special abilities"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/weapons/6b992c14-d45a-4ce5-976f-34539ab1fb72", "trailer": null, "released": "Jan 2025", "shots": [null, null, null]}, {"slug": "pizza-rush", "title": "Pizza Rush: Craftable Pizza Add-On", "studio": "A Foxy Toast", "type": "Add-On", "summary": "Cooking Add-On: build pizzas from dough, sauce, cheese and toppings on interactive machines; timed cooking and stacking buffs.", "features": ["5+ interactive cooking machines", "30+ pizza combinations", "Stacking buffs", "Timed cooking (pizzas can burn)"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/pizza-rush:-craftable-pizza-add--on/f140c631-c4f2-4de4-a4d3-83c6d9d56990", "trailer": "https://www.youtube.com/watch?v=sATzOz4asuA", "released": "Oct 2025", "shots": [null, null, null]}, {"slug": "cartoon-planes", "title": "Cartoon Planes", "studio": "Sapphire Studios", "type": "World", "summary": "Cartoon flying world: earn a pilot's license, run tasks and heist events, and upgrade your plane.", "features": ["8 flyable planes", "License progression and tasks", "Heist events with upgrade rewards"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/cartoon-planes/6dd0d876-2701-41ec-8507-f4deab4b974a", "trailer": null, "released": "May 2021", "shots": [null, null, null]}, {"slug": "dungeons-expansion", "title": "Dungeons Expansion", "studio": "Sapphire Studios", "type": "World", "summary": "Survival expansion where pixies spawn 24 dungeons into the world, packed with new mobs, challenges and loot.", "features": ["24 spawnable dungeons", "Pixie-triggered dungeon spawning", "New mobs and loot"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/dungeons-expansion/aafd0d4d-94f5-42a5-bc10-f10cf29f8202", "trailer": null, "released": "Sep 2022", "shots": [null, null, null]}, {"slug": "one-block-space-smp", "title": "One Block Space SMP", "studio": "A Foxy Toast", "type": "World", "summary": "Space-themed one-block survival: a single block generates resources while asteroids, alien mobs and events appear in the void.", "features": ["Resource-generating space block", "Asteroids, alien mobs and void events", "Unlockable One Block phases"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/one-block-space-smp/3566cb6c-6bfd-426d-abd3-f3d8b6b21415", "trailer": null, "released": "Aug 2026", "shots": [null, null, null]}, {"slug": "puppiez", "title": "Puppiez", "studio": "Sapphire Studios", "type": "World", "summary": "Pet-care world: adopt dogs, then pet, feed, walk and look after them, including beds and cures when they get sick.", "features": ["Adoptable dogs", "Care needs: food, walks, beds", "Sickness and cures"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/puppiez/999a182c-f724-45ba-9277-486105ac0443", "trailer": null, "released": "Apr 2023", "shots": [null, null, null]}, {"slug": "space-gadgets", "title": "Space Gadgets", "studio": "A Foxy Toast", "type": "Add-On", "summary": "Four craftable space tools for flying, teleporting and zooming to far-off objectives, made for playing with friends.", "features": ["4 craftable gadgets", "Flight, teleport and dash mechanics", "Built for multiplayer challenges"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/space-gadgets/3456767d-7af9-4014-a6b2-17e2f36bfda3", "trailer": "https://www.youtube.com/watch?v=EnOJzJyFohc", "released": "Mar 2025", "shots": [null, null, null]}, {"slug": "mobs", "title": "MOBS", "studio": "Sapphire Studios", "type": "Add-On", "summary": "Custom mobs for any world whose drops summon random boss fights, with custom attacks, effects and armor drops.", "features": ["Custom mobs for any world", "Drops that summon random bosses", "Custom attacks, effects and armor"], "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/mobs/d8079e80-70a7-49ad-b7d6-56e159fc9dd5", "trailer": null, "released": "Apr 2025", "shots": [null, null, null]}];
+const ROLES = {
+  "Sapphire Studios": "My role: CTO. Technical development with Script API scripting plus custom entities, items and blocks.",
+  "A Foxy Toast": "My role: add-on developer. Script API scripting plus custom entities, items and blocks."
+};
+const bySlug = Object.fromEntries(PRODUCTS.map(p => [p.slug, p]));
+const dlg = document.getElementById('project');
+const $ = id => document.getElementById(id);
+
+function openProject(slug, opener) {
+  const p = bySlug[slug];
+  if (!p) return;
+  const imgs = [`assets/img/${p.slug}/keyart.webp`, ...p.shots.map((_, i) => `assets/img/${p.slug}/shot-${i + 1}.webp`)];
+  const main = $('m-main');
+  main.src = imgs[0];
+  main.alt = `${p.title} key art`;
+  const strip = $('m-strip');
+  strip.replaceChildren(...imgs.map((src, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', i === 0 ? 'Key art' : `Screenshot ${i}`);
+    b.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+    const im = document.createElement('img');
+    im.src = src; im.alt = ''; im.loading = 'lazy';
+    b.append(im);
+    b.addEventListener('click', () => {
+      main.src = src;
+      strip.querySelectorAll('button').forEach(x => x.setAttribute('aria-current', x === b ? 'true' : 'false'));
+    });
+    return b;
+  }));
+  $('m-title').textContent = p.title;
+  $('m-meta').textContent = `${p.studio} · ${p.type} · Released on the Minecraft Marketplace, ${p.released}`;
+  $('m-role').textContent = ROLES[p.studio] || '';
+  $('m-summary').textContent = p.summary;
+  $('m-features').replaceChildren(...p.features.map(f => Object.assign(document.createElement('li'), { textContent: f })));
+  const links = $('m-links');
+  const mk = (href, label, cls) => Object.assign(document.createElement('a'), { href, textContent: label, className: `btn ${cls}`, target: '_blank', rel: 'noopener' });
+  links.replaceChildren(mk(p.url, 'View on the Marketplace', 'btn-primary'), ...(p.trailer ? [mk(p.trailer, 'Watch the trailer', 'btn-ghost')] : []));
+  dlg._opener = opener;
+  dlg.showModal();
+}
+document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => openProject(c.dataset.slug, c)));
+dlg.addEventListener('click', e => { if (e.target === dlg || e.target.hasAttribute('data-close')) dlg.close(); });
+dlg.addEventListener('close', () => dlg._opener && dlg._opener.focus());
+
+document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
+  const f = btn.dataset.filter;
+  document.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+  document.querySelectorAll('.card').forEach(c => { c.hidden = f !== 'all' && c.dataset.studio !== f; });
+}));
+
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; setTimeout(() => (b.textContent = 'Copy'), 1500); } catch (e) {}
+}));
+</script>
+</body>
+</html>

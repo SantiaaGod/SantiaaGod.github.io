@@ -1,0 +1,311 @@
+[
+  {
+    "slug": "portality",
+    "title": "Portality",
+    "studio": "Sapphire Studios",
+    "type": "Add-On",
+    "rating": 3.7,
+    "ratings": 296,
+    "price": 310,
+    "released": "2024-07-16",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/portality/28f5342a-391e-4b17-aee9-758fef80c000",
+    "summary": "Official Bedrock port of the Java mod Portality, built together with the original mod's creator, Buuz135. Adds warp portals to survival.",
+    "features": [
+      "Port of a popular Java mod to Bedrock",
+      "Warp portal network for survival",
+      "Made with the original author (Buuz135)"
+    ],
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7a6eb452-1baa-475d-bb3a-d8c21fe5aabd/Portality_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9bb6aad9-6b61-4b31-813a-a21a50d145c3/Portality_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f97c1b5d-9f4d-4e67-b32d-2c012f37c384/Portality_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1c4728ee-d774-4301-a05e-03992b172565/Portality_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "one-chunk-survival",
+    "title": "One Chunk Survival",
+    "studio": "Sapphire Studios",
+    "type": "World",
+    "rating": 3.8,
+    "ratings": 214,
+    "price": 660,
+    "released": "2023-11-07",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/one-chunk-survival/0d35eba5-60bc-4a73-b0c7-77b2bc3c651b",
+    "summary": "Survival challenge confined to a single chunk, with luck-based resource generators that grow as you progress.",
+    "features": [
+      "Survival limited to one chunk",
+      "Randomized resource generators",
+      "Built-in tutorial"
+    ],
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ea3179b4-bc19-461f-a477-985496fe2739/OneChunkSurvival_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/91078148-c8f6-4e82-9a18-942493c5f220/OneChunkSurvival_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/00492dab-3a7c-4b26-bbc7-9ce4634da5ae/OneChunkSurvival_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6b977a26-1a7f-412b-8a5b-3f345cb98c4e/OneChunkSurvival_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "weapons",
+    "title": "Weapons",
+    "studio": "Sapphire Studios",
+    "type": "Add-On",
+    "rating": 3.6,
+    "ratings": 183,
+    "price": 490,
+    "released": "2025-01-21",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/weapons/6b992c14-d45a-4ce5-976f-34539ab1fb72",
+    "summary": "27 craftable overpowered swords, each with its own recipe, attack animations and special ability, for solo play or PvP.",
+    "features": [
+      "27 custom swords",
+      "Unique crafting recipe per weapon",
+      "Custom attack animations",
+      "Special abilities"
+    ],
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/953ab7ab-b2e4-438b-9f61-2f274b08dbbc/Weapons_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/43f30938-4472-4d61-95f4-2e48528476dd/Weapons_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3731c936-3f54-4757-a5f3-77e5f01a446d/Weapons_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/a06e658d-3f7a-4272-a521-28a657b0b2d8/Weapons_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "dungeons-expansion",
+    "title": "Dungeons Expansion",
+    "studio": "Sapphire Studios",
+    "type": "World",
+    "rating": 3.3,
+    "ratings": 101,
+    "price": 310,
+    "released": "2022-09-27",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/dungeons-expansion/aafd0d4d-94f5-42a5-bc10-f10cf29f8202",
+    "summary": "Survival expansion where pixies spawn 24 dungeons into the world, packed with new mobs, challenges and loot.",
+    "features": [
+      "24 spawnable dungeons",
+      "Pixie-triggered dungeon spawning",
+      "New mobs and loot"
+    ],
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/eb36c546-b93f-4ffd-aa1f-ef5ea10f51d6/DungeonExpansion_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/79c71bb6-94f0-4d75-8dc1-22b6729d210c/DungeonExpansion_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/dfa37209-c106-435b-b712-bd5d1e053c1c/DungeonExpansion_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/d1c650d9-f4e1-4fdf-b76e-1dab959f1534/DungeonExpansion_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "cartoon-planes",
+    "title": "Cartoon Planes",
+    "studio": "Sapphire Studios",
+    "type": "World",
+    "rating": 3.9,
+    "ratings": 80,
+    "price": 830,
+    "released": "2021-05-11",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/cartoon-planes/6dd0d876-2701-41ec-8507-f4deab4b974a",
+    "summary": "Cartoon flying world: earn a pilot's license, run tasks and heist events, and upgrade your plane.",
+    "features": [
+      "8 flyable planes",
+      "License progression and tasks",
+      "Heist events with upgrade rewards"
+    ],
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-title-b63a0803d3653643-20ca2/f6444ce1-cb83-427e-bac2-cff82545638c/CartoonPlanes_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-title-b63a0803d3653643-20ca2/cc0749f4-8d27-4c17-9e92-580c1b36c01c/CartoonPlanes_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-title-b63a0803d3653643-20ca2/7cc0484d-ddb6-4e77-be9e-3fb5372fcf90/CartoonPlanes_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-title-b63a0803d3653643-20ca2/bbbb1e44-f0ff-4edf-98d4-9bac657f5832/CartoonPlanes_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "puppiez",
+    "title": "Puppiez",
+    "studio": "Sapphire Studios",
+    "type": "World",
+    "rating": 4.5,
+    "ratings": 49,
+    "price": 490,
+    "released": "2023-04-25",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/puppiez/999a182c-f724-45ba-9277-486105ac0443",
+    "summary": "Pet-care world: adopt dogs, then pet, feed, walk and look after them, including beds and cures when they get sick.",
+    "features": [
+      "Adoptable dogs",
+      "Care needs: food, walks, beds",
+      "Sickness and cures"
+    ],
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/bc553567-cab0-4c01-b3dc-c56473da6580/Puppies_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ca2d96f8-75c9-4c5c-912c-924441bbbb4b/Puppies_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/17bcd483-ac6e-4aa1-98dc-a0dfaa5fd6cb/Puppies_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6833caaa-112e-48c2-8781-bdf3aa2a9f29/Puppies_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "mobs",
+    "title": "MOBS",
+    "studio": "Sapphire Studios",
+    "type": "Add-On",
+    "rating": 4.0,
+    "ratings": 27,
+    "price": 660,
+    "released": "2025-04-15",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/sapphire-studios/mobs/d8079e80-70a7-49ad-b7d6-56e159fc9dd5",
+    "summary": "Custom mobs for any world whose drops summon random boss fights, with custom attacks, effects and armor drops.",
+    "features": [
+      "Custom mobs for any world",
+      "Drops that summon random bosses",
+      "Custom attacks, effects and armor"
+    ],
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/cbedf267-d1d4-4702-a2ed-833a3ffb0cb0/Mobs_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fb26c01f-8778-4432-9a67-fb781df980a9/Mobs_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1d2abd8b-7734-4fff-83d5-f4acb32e0ed8/Mobs_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4ab85d86-e185-43a5-af1a-d528adf5242c/Mobs_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "pet-blocks",
+    "title": "Pet Blocks",
+    "studio": "A Foxy Toast",
+    "type": "Add-On",
+    "rating": 4.0,
+    "ratings": 160,
+    "price": 490,
+    "released": "2025-01-14",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/pet-blocks/297b5435-afef-40f0-a0b2-7ac26eb6a57d",
+    "summary": "200+ tameable block pets that dance, mine, fight and cook, with custom interactions and a personal pet squad.",
+    "features": [
+      "200+ pets",
+      "Pets that dance, mine, fight and cook",
+      "Custom interactions and animations",
+      "Compatible with all resource packs"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=tABf61uFurI",
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/42cad94a-6345-45ef-8943-32ff7975a67a/Pet_Blocks_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/bc6ee905-2849-47d2-8eec-46cd319bbedb/Pet_Blocks_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/02af222d-8dc3-4365-a9a8-a9f7061a1206/Pet_Blocks_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c75bd259-6b36-4d5c-9f4d-6f4b4ca929ae/Pet_Blocks_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "soul-hunters",
+    "title": "Soul Hunters Add-On",
+    "studio": "A Foxy Toast",
+    "type": "Add-On",
+    "rating": 4.4,
+    "ratings": 36,
+    "price": 830,
+    "released": "2026-01-06",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/soul-hunters-add--on/fbbe2a7d-4220-4709-9c0b-2e75ca68b7a8",
+    "summary": "Combat Add-On about surviving endless demon nights: upgradeable soul weapons, summonable boss lords, armor sets and companions.",
+    "features": [
+      "10 upgradeable Soul Weapons",
+      "9 summonable Demonic Lord bosses",
+      "15+ full-moon enemies and portal armies",
+      "10 armor sets and 10 companions"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=ERhYdaAha3M",
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c5dfa281-7009-4341-85a4-ac73cb3d97ba/SoulHunters_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/91a694eb-15d1-48da-8c1f-987731e77108/SoulHunters_MarketingScreenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7115ca36-30af-447d-8534-20f29c95def8/SoulHunters_MarketingScreenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6f339673-e16f-4bbd-9518-454549236865/SoulHunters_MarketingScreenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "wither-plus",
+    "title": "Wither Plus Add-On",
+    "studio": "A Foxy Toast",
+    "type": "Add-On",
+    "rating": 4.4,
+    "ratings": 62,
+    "price": 490,
+    "released": "2025-07-22",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/wither-plus-add--on/e20bba2e-8d8a-4ed5-b606-677b67b18c92",
+    "summary": "Wither-themed expansion with new Wither bosses, skeleton mobs, collectible beacons, craftable decor and pets.",
+    "features": [
+      "New Wither bosses",
+      "Unique skeleton mobs",
+      "Collectible beacons",
+      "Craftable furniture and pets"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=CjEtuEOo8N0",
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4515b3bd-71d5-4901-aa9e-261d62b89b91/WitherPlus_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f4f00731-e2f9-4955-9035-333d4a48ca93/WitherPlus_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1d6f2a5e-1fb0-491b-b3c8-f215faf953ea/WitherPlus_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2cc17b30-f577-4b1a-ab52-e6457b3375b7/WitherPlus_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "pizza-rush",
+    "title": "Pizza Rush: Craftable Pizza Add-On",
+    "studio": "A Foxy Toast",
+    "type": "Add-On",
+    "rating": 4.1,
+    "ratings": 96,
+    "price": 310,
+    "released": "2025-10-28",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/pizza-rush:-craftable-pizza-add--on/f140c631-c4f2-4de4-a4d3-83c6d9d56990",
+    "summary": "Cooking Add-On: build pizzas from dough, sauce, cheese and toppings on interactive machines; timed cooking and stacking buffs.",
+    "features": [
+      "5+ interactive cooking machines",
+      "30+ pizza combinations",
+      "Stacking buffs",
+      "Timed cooking (pizzas can burn)"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=sATzOz4asuA",
+    "keyart": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/89755c38-a7e6-4b20-9791-decf8fd1dc17/PizzaRush_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a323bac1-f210-49bb-86e9-38990be1586f/PizzaRush_screenshot_0.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/409d383c-5372-44d6-b8a4-ac22a2916ded/PizzaRush_screenshot_1.jpg",
+      "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9e1de5b8-8400-42f2-9934-1a34883193e9/PizzaRush_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "one-block-space-smp",
+    "title": "One Block Space SMP",
+    "studio": "A Foxy Toast",
+    "type": "World",
+    "rating": null,
+    "ratings": 0,
+    "price": 1340,
+    "released": "2026-08-11",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/one-block-space-smp/3566cb6c-6bfd-426d-abd3-f3d8b6b21415",
+    "summary": "Space-themed one-block survival: a single block generates resources while asteroids, alien mobs and events appear in the void.",
+    "features": [
+      "Resource-generating space block",
+      "Asteroids, alien mobs and void events",
+      "Unlockable One Block phases"
+    ],
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/eaf7d969-7634-468a-b260-19d02824937d/OneBlockSpace_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/15168510-8bcd-48dd-a02c-04283a65bf1c/OneBlockSpace_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/cfc01b0e-aaa5-4320-84bd-04c7c6ee60e0/OneBlockSpace_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/955ef830-46a2-4c06-8f9e-ec08e00bcadf/OneBlockSpace_screenshot_2.jpg"
+    ]
+  },
+  {
+    "slug": "space-gadgets",
+    "title": "Space Gadgets",
+    "studio": "A Foxy Toast",
+    "type": "Add-On",
+    "rating": 3.6,
+    "ratings": 13,
+    "price": 490,
+    "released": "2025-03-18",
+    "url": "https://www.minecraft.net/en-us/marketplace/pdp/a-foxy-toast/space-gadgets/3456767d-7af9-4014-a6b2-17e2f36bfda3",
+    "summary": "Four craftable space tools for flying, teleporting and zooming to far-off objectives, made for playing with friends.",
+    "features": [
+      "4 craftable gadgets",
+      "Flight, teleport and dash mechanics",
+      "Built for multiplayer challenges"
+    ],
+    "trailer": "https://www.youtube.com/watch?v=EnOJzJyFohc",
+    "keyart": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f72e4e21-d497-4d2c-ae15-067323833411/SpaceGadgets_Thumbnail_0.jpg",
+    "shots": [
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/884a0f80-cc53-4b7c-ae2e-65dd0f176b88/SpaceGadgets_screenshot_0.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/001678d6-0e6a-4547-9427-09e24b0240c0/SpaceGadgets_screenshot_1.jpg",
+      "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f55056cc-fea7-4f24-95cf-1945f6bae285/SpaceGadgets_screenshot_2.jpg"
+    ]
+  }
+]
