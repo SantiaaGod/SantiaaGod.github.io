@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Abrir en Claude Code</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; }
+  main { max-width: 32rem; }
+  a { font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <p id="msg">Abriendo Claude…</p>
+  <p><a id="open" href="#" hidden>Abrir Claude</a></p>
+  <p><small>Cuando se abra la app, podés cerrar esta pestaña.</small></p>
+</main>
+<script>
+  // Puente del botón "Abrir en Claude Code" de la Lista de Proyectos: los artifacts de claude.ai no
+  // siguen links claude://, así que el botón abre esta página y esta salta a la app de escritorio.
+  // Sólo acepta un id de tarea: lo que llega a la app es siempre "/lanzar <id>" en D:\Lista.
+  const id = new URLSearchParams(location.search).get("id") || "";
+  const msg = document.getElementById("msg");
+  if (/^[A-Za-z0-9-]{1,60}$/.test(id)) {
+    const url = "claude://code/new?folder=" + encodeURIComponent("D:\\Lista") + "&q=" + encodeURIComponent("/lanzar " + id);
+    const open = document.getElementById("open");
+    open.href = url;
+    open.hidden = false;
+    location.href = url;
+  } else {
+    msg.textContent = "Falta el id de la tarea.";
+  }
+</script>
+</body>
+</html>
